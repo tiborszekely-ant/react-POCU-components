@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "email": "tibor@gmail.com",
+      "password": "$2a$10$wCP0vVEYIpWMrrm5lYr.9eIiQPjpVHrKW9GiOm8hyoym6kGu9HRAq",
+      "id": 1
+    },
+    {
+      "email": "test1@email.com",
+      "password": "$2a$10$0EVW7W0McvTAcDZIz0JHFeur3HEw3t0X1SixMGih7HYvfEWd3eQsm",
+      "id": 2
+    },
+    {
+      "email": "tibor_szekely@gmail.com",
+      "password": "$2a$10$KLeBkRoD5rnLBZgDnkJZmO.coff0KlSbeSyOtli1h33FoLHH/ZM62",
+      "name": "Tibor Szekely",
+      "id": 3
+    },
+    {
+      "email": "name@email.com",
+      "password": "$2a$10$R6iyF68wH4BkGger0tIr9eJMeQnp46xH37oUxgP1cU7itzLuVHMdi",
+      "name": "Name",
+      "id": 4
+    },
+    {
+      "email": "hello@email.com",
+      "password": "$2a$10$dnnPLTn8X1wL8dnozYhIwOQdvJkHUqjTzzWxW.d.9kS6GW4FlMzuC",
+      "name": "Hello",
+      "id": 5
+    },
+    {
+      "email": "hy@email.com",
+      "password": "$2a$10$M01.xNfiqr8cUKalJ0pwBuYFxQ3FR2LF9CqxKSHy1S4sS5feXtvPS",
+      "name": "hy",
+      "id": 6
+    },
+    {
+      "email": "tibor@yahoo.com",
+      "password": "$2a$10$84ktyYdmUm3FmZ9lHKO/1Om.d4gi3bSs.mO0Brgy/e3nC3Q.hdu92",
+      "name": "Test Tibor",
+      "id": 7
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+.main-menu .right-side-links a:hover,
+.main-menu .active {
+  text-decoration: underline;
+}
+
+.main-menu {
+  background: rgba(45, 171, 196, 0.85);
+  padding: 0.5rem 1rem;
+}
+
+.main-menu menu {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-menu .right-side-links {
+    margin-left: auto;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0.6cm;
+    gap: 30px;
+}
+
+.main-menu .logo {
+    font-size: 26px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 0.6cm;
+    margin-top: 0.25cm;
+    margin-bottom: 0.25cm;
+}
