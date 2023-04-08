@@ -4,3 +4,4 @@ export { Login } from './Login/Login';
 export { Nav } from './Nav/Nav';
 export { NotFound } from './NotFound/NotFound';
 export { SignUp } from './SignUp/SignUp';
+export { Button } from './Button/Button';

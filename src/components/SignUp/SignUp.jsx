@@ -1,7 +1,10 @@
 import { Nav } from "../";
+import { Button } from "../";
 import { BsPersonFill } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from 'react';
+import { configureApi, ApiError } from "../../helpers/api.helper";
+import { useAuth } from "../../features";
 import styles from './SignUp.module.css';
 import clsx from 'clsx';
 
@@ -17,6 +20,8 @@ export function SignUp() {
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
     const nameRef = useRef();
+    const { add: apiRegister } = configureApi('register');
+    const { user } = useAuth();
 
     function handleEmailChange(e) {
         setEmail(e.target.value);
@@ -38,26 +43,24 @@ export function SignUp() {
     async function handleRegister(e) {
         e.preventDefault();
         if (confirmPassword === password) {
-            const resp = await fetch('http://localhost:3000/register', {
-                method: 'POST',
-                body: JSON.stringify({ name, email, password }),
-                headers: { 'Content-type': 'application/json',},
-            }).then((res) => res.json());
-    
-            if (resp === "Email and password are required" || resp === "Email already exists") {
-                setErrorMessage(resp);
-                return;
+            try {
+                await apiRegister({name, email, password});
+                navigate('/login');
+            } catch (e) {
+                if (e instanceof ApiError) {
+                    setErrorMessage(e.message);
+                    return;
+                }    
             }
-            setEmail('');
-            setPassword('');
-            setName('');
-            navigate('/login');
         }
     }
     
     return <div>
         <Nav />
-        <div className={styles['signup-div']}>
+        <div className={clsx({
+                        [styles['signup-div']]: user === null,
+                        [styles['signup-div-disabled']]: user !== null,
+                    })}>
             <form onSubmit={handleRegister}>
                 <h1>Sign Up</h1>
                 <h2><BsPersonFill size="2rem"/>Create your account</h2>
@@ -106,12 +109,12 @@ export function SignUp() {
                         [styles.notMatch]: match === false,
                     })}>Passwords do not match!</p>
                 <div>
-                    <button type="submit">Register</button>
-                    <p className={styles['error']}>{errorMessage}</p>
+                    <Button type="submit">Register</Button>
+                    <p className={styles.error}>{errorMessage}</p>
                 </div>
                 <h4>
                     Already have an account?
-                    <Link to="/login" className={styles['link']}> Sign In</Link>
+                    <Link to="/login" className={styles.link}> Sign In</Link>
                 </h4>
             </form>
         </div>

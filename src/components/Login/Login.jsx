@@ -1,8 +1,12 @@
 import { Nav } from "../";
+import { Button } from "../";
 import { BsPersonFill } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import styles from './Login.module.css';
 import { useRef, useState } from "react";
+import { useAuth } from "../../features";
+import { configureApi, ApiError } from "../../helpers/api.helper";
+import clsx from 'clsx';
 
 export function Login() {
     const navigate = useNavigate();
@@ -11,6 +15,8 @@ export function Login() {
     const [errorMessage, setErrorMessage] = useState('');
     const emailRef = useRef();
     const passwordRef = useRef();
+    const { add: apiLogin } = configureApi('login');
+    const { user, login } = useAuth();
 
     function handleEmailChange(e) {
         setEmail(e.target.value);
@@ -22,32 +28,24 @@ export function Login() {
 
     async function handleLogin(e) {
         e.preventDefault();
-        const resp = await fetch('http://localhost:3000/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: { 'Content-type': 'application/json'},
-        }).then((res) => res.json());
-
-        if (resp === "Email and password are required") {
-            setErrorMessage(resp);
-            return;
+        try {
+            const authResp = await apiLogin({email, password});
+            login(authResp);
+            navigate('/posts');
+        } catch (e) {
+            if (e instanceof ApiError) {
+                setErrorMessage(e.message);
+                return;
+            }    
         }
-        if (resp === "Cannot find user") {
-            setErrorMessage('There is no existing user with this email, please register');
-            return;
-        }
-        if (resp === "Password is too short" || resp === "Incorrect password") {
-            setErrorMessage('Incorrect password');
-            return;
-        }
-        setEmail('');
-        setPassword('');
-        navigate('/posts');
     }
-    
+
     return <div>
         <Nav />
-        <div className={styles['login-div']}>
+        <div className={clsx({
+                        [styles['login-div']]: user === null,
+                        [styles['login-div-disabled']]: user !== null,
+                    })}>
             <form onSubmit={handleLogin}>
                 <h1>Sign in</h1>
                 <h2><BsPersonFill size="2rem"/>Sign into your account</h2>
@@ -70,12 +68,12 @@ export function Login() {
                     />
                 </div>
                 <div>
-                    <button type="submit">Login</button>
-                    <p className={styles['error']}>{errorMessage}</p>
+                    <Button variant="smallWidth" type="submit">Login</Button>
+                    <p className={styles.error}>{errorMessage}</p>
                 </div>
                 <h4>
                     Don't have an account?
-                    <Link to="/signup" className={styles['link']}> Sign Up</Link>
+                    <Link to="/signup" className={styles.link}> Sign Up</Link>
                 </h4>
             </form>
         </div>

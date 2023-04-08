@@ -39,6 +39,42 @@
       "password": "$2a$10$84ktyYdmUm3FmZ9lHKO/1Om.d4gi3bSs.mO0Brgy/e3nC3Q.hdu92",
       "name": "Test Tibor",
       "id": 7
+    },
+    {
+      "email": "tibor.szekely@agilenetworks.tech",
+      "password": "$2a$10$1bbOPgn3wlIShLhUANOOp.G/rDfR6MTbCB79GroKE7bnfNyftkZAe",
+      "name": "Tibor Szekely",
+      "id": 8
+    },
+    {
+      "email": "dd@email.com",
+      "password": "$2a$10$RjNvnO9o/cmelDHc74kBqOTyGwhzvNrKDZmeiFkjk6oqoOabrQriS",
+      "name": "Tibor",
+      "id": 9
+    },
+    {
+      "email": "mary.public@agilenetworks.tech",
+      "password": "$2a$10$MFqGz7emVBr3zmQ857PcV.I9TnUTcxVkJCYXbQA81L8K58pU3HAEC",
+      "name": "apppass",
+      "id": 10
+    },
+    {
+      "email": "ee@email.com",
+      "password": "$2a$10$hi1qEfOWGk.EzEmG3HqE.eHpUdBoQDYWnoQE0hA49MOiSvhZqFXlO",
+      "name": "EE",
+      "id": 11
+    },
+    {
+      "email": "ii@email.com",
+      "password": "$2a$10$.ZzuGbhd80CIYlUhSD8L5uFn0p8CP7eJj2vZqByAgDsfbHOpePMWC",
+      "name": "",
+      "id": 12
+    },
+    {
+      "email": "Test@test.com",
+      "password": "$2a$10$5zczoCCVpDgwSnRoET1wBOSG1VzMjphR43PNgPrSOLUNeOlVMaKxa",
+      "name": "ttt",
+      "id": 13
     }
   ]
 }

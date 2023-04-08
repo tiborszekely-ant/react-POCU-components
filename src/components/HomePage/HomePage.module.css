@@ -14,23 +14,3 @@
     margin-left: -100px;
     margin-top: -25px;
 }
-
-.home-div button {
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    background: rgba(45, 171, 196, 0.85);
-    border-radius: 8px;
-    border: none;
-    padding: 8px 20px;
-    margin-left: 8px;
-    width: 100px;
-}
-
-.home-div button:hover {
-    font-weight: bold;
-}
-
-.home-div .buttonLogin {
-    width: 80px;
-}

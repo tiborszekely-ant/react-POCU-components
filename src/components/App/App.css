@@ -1,0 +1,11 @@
+:root {
+    --primary-color: rgba(45, 171, 196, 0.85);
+    --primary-color-dark: rgba(35, 119, 136, 0.85);
+    --secondary-color: rgb(218, 206, 206);
+    --secondary-color-dark: rgba(124, 139, 142, 0.85);
+    --error-color: #d56161;
+    --error-color-dark: #d60a0a;
+  
+    --text-color: #ffffff;
+    --font-family-type: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,4 +1,5 @@
 import { Nav } from '../';
+import { Button } from '../';
 import { Link } from 'react-router-dom';
 import styles from './HomePage.module.css';
 
@@ -7,10 +8,10 @@ export function HomePage() {
         <Nav />
         <div className={styles['home-div']}>
             <Link to='/signup'>
-                <button>Sign Up</button>
+                <Button variant="withMargin">Sign Up</Button>
             </Link>
             <Link to='/login'>
-                <button className={styles['buttonLogin']}>Login</button>
+                <Button variant="smallWidthWithMargin">Login</Button>
             </Link>
         </div>
     </div>
